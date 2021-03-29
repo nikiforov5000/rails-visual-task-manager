@@ -10,8 +10,14 @@ class DayPacksController < ApplicationController
       redirect_to @day_pack
     else
       flash[:error] = "Something went wrong"
-      render :new
+      render @day_pack
     end
+  end
+
+  def show
+    @day_pack = DayPack.find(params[:id])
+    @task = Task.new
+    @tasks = @day_pack.tasks.all
   end
 
   private
