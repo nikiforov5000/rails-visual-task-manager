@@ -1,0 +1,14 @@
+<%= @day_pack.title %>
+<h3>Tasks for today: </h3>
+
+<% @tasks.each do |task| %>
+  <%= task.name %>
+  <%= task.duration %>
+<% end %>
+
+<h3>Add tasks</h3>
+<%= simple_form_for [ @day_pack, @task ] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :duration %>
+  <%= f.submit "Add task for this day pack" %>
+<% end %>
