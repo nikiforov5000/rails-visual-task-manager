@@ -1,0 +1,2 @@
+class DayPacksController < ApplicationController
+end
