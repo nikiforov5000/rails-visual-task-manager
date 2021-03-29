@@ -1,7 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts "Clean db"
+# Activity.destroy_all
+DayPack.destroy_all
+Task.destroy_all
+puts "All deleted"
+day_pack1 = DayPack.create(title: "My first daypack")
+running = Task.new(name:"morning running", duration: 45)
+running.day_pack = day_pack1
+running.save!
+# sport = Activity.new(type_of: "sport")
+# running.activitiy = sport
+# sport.save!
+
+puts "Seed complete"
