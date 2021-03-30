@@ -21,6 +21,7 @@ class DayPacksController < ApplicationController
   def show
     @day_pack = DayPack.find(params[:id])
     @tasks = @day_pack.tasks.all
+    @count = 0
   end
 
   private
