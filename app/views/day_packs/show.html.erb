@@ -1,20 +1,26 @@
-<%= @day_pack.title %>
-<h3>Tasks for today: </h3>
+<div class="day_pack-container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-12 col-md-8 col-xl-5 bg-dark text-light">
 
-<% @tasks.each do |task| %>
-  <%= task.name %>
-  <%= task.duration %>
-  <p></p>
-  <span id="timer"></span>
-  <span id="countTimers"></span>
-  <button id="pause">Pause</button>
-  <button id="resume">Resume</button>
+      <%= @day_pack.title %>
+      <h3>Tasks for today: </h3>
 
-<% end %>
+      <% @tasks.each do |task| %>
+        <%= task.name %>
+        <p id="count"><%= task.duration %></p>
+        <span id="timer"></span>
+        <span id="countTimers"></span>
+        <button id="pause">Start</button>
+      <% end %>
+      <div id="test">test</div>
 
-<h3>Add tasks</h3>
-<%#= simple_form_for [ @day_pack, new_day_pack_task_path(@day_pack) ] do |f| %>
-  <%#= f.input :name %>
-  <%#= f.input :duration %>
-  <%#= f.submit "Add task for this day pack" %>
-<%# end %>
+      <%# <h3>Add tasks</h3> %>
+      <%#= simple_form_for [ @day_pack, new_day_pack_task_path(@day_pack) ] do |f| %>
+        <%#= f.input :name %>
+        <%#= f.input :duration %>
+        <%#= f.submit "Add task for this day pack" %>
+      <%# end %>
+    </div>
+  </div>
+</div>
+
