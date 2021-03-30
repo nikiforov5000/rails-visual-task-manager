@@ -1,0 +1,5 @@
+
+<% @day_packs.each_with_index do |day_pack, index| %>
+  <%= link_to "#{index + 1} #{day_pack.title}", day_pack %>
+  <p></p>
+<% end %>

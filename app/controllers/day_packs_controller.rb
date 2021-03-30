@@ -14,6 +14,17 @@ class DayPacksController < ApplicationController
     end
   end
 
+  def index
+    @day_packs = DayPack.all
+  end
+
+  def show
+    @day_pack = DayPack.find(params[:id])
+    @tasks = @day_pack.tasks.all
+  end
+  
+  
+
   private
 
   def day_pack_params

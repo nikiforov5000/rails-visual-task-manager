@@ -4,11 +4,17 @@
 <% @tasks.each do |task| %>
   <%= task.name %>
   <%= task.duration %>
+  <p></p>
+  <span id="timer"></span>
+  <span id="countTimers"></span>
+  <button id="pause">Pause</button>
+  <button id="resume">Resume</button>
+
 <% end %>
 
 <h3>Add tasks</h3>
-<%= simple_form_for [ @day_pack, @task ] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :duration %>
-  <%= f.submit "Add task for this day pack" %>
-<% end %>
+<%#= simple_form_for [ @day_pack, new_day_pack_task_path(@day_pack) ] do |f| %>
+  <%#= f.input :name %>
+  <%#= f.input :duration %>
+  <%#= f.submit "Add task for this day pack" %>
+<%# end %>
