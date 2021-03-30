@@ -14,9 +14,12 @@ class DayPacksController < ApplicationController
     end
   end
 
+  def index
+    @day_packs = DayPack.all
+  end
+
   def show
     @day_pack = DayPack.find(params[:id])
-    @task = Task.new
     @tasks = @day_pack.tasks.all
   end
 
