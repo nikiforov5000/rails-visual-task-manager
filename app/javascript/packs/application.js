@@ -26,6 +26,10 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import Chartkick from "chartkick"
+import Chart from "chart.js"
+
+Chartkick.use(Chart)
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';

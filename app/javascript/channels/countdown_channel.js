@@ -7,10 +7,13 @@ function countTimers() {
   timersCount++;
 
   let count = document.querySelector('#count').innerHTML;
+  let duration = count;
   const counter = setInterval(timer, 1000);
 
   function timer() {
     if (!pause) { //do something if not paused
+      let remained = duration - count;
+      new Chartkick.PieChart("chart-1", [["Remained", remained], ["Done", count]])
       count = count - 1;
       
       // Time calculations for days, hours, minutes and seconds
@@ -27,14 +30,17 @@ function countTimers() {
       } 
 
       document.getElementById("timer").innerHTML = count;
+
+
     }
   }
 
   document.getElementById("countTimers").innerHTML = timersCount;
 }
 
-document.querySelector('.task-container').addEventListener('click', (event) => {
+document.querySelectorAll('.task-container').addEventListener('click', (event) => {
   let status = document.querySelector('#pause');
+  event.currentTarget(() => {
   if ( pause ) {
     status.innerHTML = "Pause";
   }
@@ -42,4 +48,5 @@ document.querySelector('.task-container').addEventListener('click', (event) => {
     status.innerHTML = "Start";
   }
 	pause = !pause;
+});
 });

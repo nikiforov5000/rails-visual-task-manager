@@ -7,8 +7,9 @@ day_pack1 = DayPack.create(title: "My first daypack")
 running = Task.new(name:"morning running", duration: 45)
 running.day_pack = day_pack1
 running.save!
-# sport = Activity.new(type_of: "sport")
-# running.activitiy = sport
-# sport.save!
+
+reading = Task.new(name:"Investments reading", duration: 90)
+reading.day_pack = day_pack1
+reading.save!
 
 puts "Seed complete"
