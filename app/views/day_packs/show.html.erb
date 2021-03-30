@@ -6,13 +6,14 @@
       <h3>Tasks for today: </h3>
 
       <% @tasks.each do |task| %>
-        <%= task.name %>
-        <p id="count"><%= task.duration %></p>
-        <span id="timer"></span>
-        <span id="countTimers"></span>
-        <button id="pause">Start</button>
+        <div class="task-container">
+          <%= task.name %>
+          <p id="count"><%= task.duration %></p>
+          <p>Time remained: <span id="timer"></span></p>
+          <span id="countTimers"></span>
+          <h1 id="pause">Start</h1>
+        </div>
       <% end %>
-      <div id="test">test</div>
 
       <%# <h3>Add tasks</h3> %>
       <%#= simple_form_for [ @day_pack, new_day_pack_task_path(@day_pack) ] do |f| %>

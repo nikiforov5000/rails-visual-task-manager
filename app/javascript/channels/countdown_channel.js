@@ -33,12 +33,13 @@ function countTimers() {
   document.getElementById("countTimers").innerHTML = timersCount;
 }
 
-document.getElementById('test').addEventListener('click', (event) => {
+document.querySelector('.task-container').addEventListener('click', (event) => {
+  let status = document.querySelector('#pause');
   if ( pause ) {
-  event.currentTarget.innerHTML = "Pause";
+    status.innerHTML = "Pause";
   }
   else {
-  event.currentTarget.innerHTML = "Start";
+    status.innerHTML = "Start";
   }
 	pause = !pause;
 });
